@@ -12,18 +12,18 @@ const ParticlesContainer = () => {
 
   return (
     <Particles
-      className="w-full h-full absolute translate-z-0"
+      className="fixed top-0 left-0 w-screen h-screen z-10"
       id="tsparticles"
       init={particlesInit}
       loaded={particlesLoaded}
       options={{
-        fullScreen: { enable: false },
+        fullScreen: { enable: true },
         background: {
           color: {
             value: "",
           },
         },
-        fpsLimit: 120,
+        fpsLimit: 140,
         interactivity: {
           events: {
             onClick: {
@@ -38,10 +38,10 @@ const ParticlesContainer = () => {
           },
           modes: {
             push: {
-              quantity: 90,
+              quantity: 10,
             },
             repulse: {
-              distance: 200,
+              distance: 150,
               duration: 0.4,
             },
           },
@@ -73,7 +73,7 @@ const ParticlesContainer = () => {
           number: {
             density: {
               enable: true,
-              area: 800,
+              area: 5000,
             },
             value: 80,
           },
