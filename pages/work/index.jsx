@@ -29,8 +29,9 @@ const Work = () => {
               exit="hidden"
               className="mb-4 max-w-[400px] mx-auto lg:mx-0"
             >
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur
-              tempora eligendi, quisquam tempore sint reiciendis.
+              Here, you'll find a curated selection of projects that not only demonstrate our technical skills but 
+              also our commitment to solving complex challenges and delivering measurable results. Each project is 
+              a testament to the trust our clients place in us and our relentless pursuit of excellence.
             </motion.p>
           </div>
 

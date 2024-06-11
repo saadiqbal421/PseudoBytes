@@ -9,25 +9,25 @@ import "swiper/css/pagination";
 
 const testimonialData = [
   {
-    image: "/t-avt-1.png",
-    name: "Anne Smith",
+    image: "/user-avatar.png",
+    name: "Justin",
     position: "Customer",
     message:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum expedita odit beatae, cupiditate saepe quam officia aut placeat quas neque!",
+      "Partnering with Pseudobytes was a game-changer for our business. Their team not only understood our vision but enhanced it with their innovative solutions. The new application they developed is now the cornerstone of our operations, driving efficiency and growth. We couldn't be more satisfied with the results!",
   },
   {
-    image: "/t-avt-2.png",
-    name: "Jane Doe",
+    image: "/user-avatar.png",
+    name: "Alberto",
     position: "Customer",
     message:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum expedita odit beatae, cupiditate saepe quam officia aut placeat quas neque!",
+      "Pseudobytes has been instrumental in our digital transformation journey. Their expertise in AI and automation helped us streamline our processes like never before, increasing our productivity by 40%. Their team is not only skilled but also incredibly reliable and responsive to our needs.",
   },
   {
-    image: "/t-avt-3.png",
-    name: "Jhon Doe",
+    image: "/user-avatar.png",
+    name: "Estela Diaz",
     position: "Customer",
     message:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum expedita odit beatae, cupiditate saepe quam officia aut placeat quas neque!",
+      "From the initial consultation to the final deployment, the level of service we received from Pseudobytes was exceptional. They are not just service providers; they are true partners who are committed to excellence and customer satisfaction. We highly recommend them for any company looking to elevate their digital presence.",
   },
 ];
 
@@ -72,7 +72,7 @@ const TestimonialSlider = () => {
               {/* quote icon */}
               <div className="mb-4">
                 <FaQuoteLeft
-                  className="text-4xl xl:text-6xl text-white/20 mx-auto md:mx-0"
+                  className="text-4xl xl:text-6xl  mx-auto md:mx-0 text-accent"
                   aria-aria-hidden
                 />
               </div>

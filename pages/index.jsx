@@ -30,27 +30,16 @@ const Home = () => {
             initial="hidden"
             animate="show"
             exit="hidden"
-            className="max-w-sm xl:max-w-xl mx-auto xl:mx-0 mb-10 xl:mb-16"
+            className="max-w-sm xl:max-w-xl mx-auto xl:mx-0 mb-10 xl:mb-19"
           >
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate,
-            exercitationem harum, quia nulla temporibus deleniti libero veniam
-            vero beatae numquam ducimus illum ab similique ipsam tempore fugit
-            quod laudantium debitis.
+            Welcome to <span className="text-accent">Pseudobytes</span>, where your vision meets our innovation.<br />
+            We are dedicated to transforming abstract ideas into tangible digital solutions that drive business success.
+            As a premier software development agency, we specialize in creating robust, scalable, and cutting-edge applications
+            tailored to meet the unique needs of our clients.<br />
+            Explore our services to see how we can bring your digital dreams to life. At Pseudobytes, we don't just build software; we build futures.
           </motion.p>
 
           {/* btn */}
-          {/* <div className="flex justify-center xl:hidden relative">
-            <ProjectsBtn />
-          </div>
-          <motion.div
-            variants={fadeIn("down", 0.4)}
-            initial="hidden"
-            animate="show"
-            exit="hidden"
-            className="hidden xl:flex"
-          >
-            <ProjectsBtn />
-          </motion.div> */}
         </div>
       </div>
       {/* image */}
