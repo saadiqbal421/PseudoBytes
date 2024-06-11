@@ -1,11 +1,8 @@
 import Image from "next/image";
-import Link from "next/link";
-import { BsArrowRight } from "react-icons/bs";
 import { Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
-import "swiper/css/free-mode";
 import "swiper/css/pagination";
 
 const workSlides = {
@@ -13,52 +10,36 @@ const workSlides = {
     {
       images: [
         {
-          title: "title",
+          title: "Mehfil",
           path: "/thumb1.jpg",
           link: "http://example.com",
+          text: "Mehfil is Pakistan's first peer-to-peer platform for renting out spaces for events such as birthdays, parties, and more. It connects hosts with available venues to guests looking for unique locations, fostering a community-driven marketplace."
         },
         {
-          title: "title",
-          path: "/thumb2.jpg",
+          title: "Tijara",
+          path: "/23.png",
           link: "http://example.com",
+          text: "Tijara is a comprehensive CRM and website creation platform designed to streamline business operations and enhance online presence. With Tijara, businesses can manage customer relationships, track sales, and build professional websites effortlessly."
         },
-        {
-          title: "title",
-          path: "/thumb3.jpg",
-          link: "http://example.com",
-        },
-        {
-          title: "title",
-          path: "/thumb4.jpg",
-          link: "http://example.com",
-        },
-      ],
+      ]
     },
     {
       images: [
         {
-          title: "title",
-          path: "/thumb4.jpg",
+          title: "Pakistan Law AI",
+          path: "/law.png",
           link: "http://example.com",
+          text: "Pakistan Law AI leverages the power of LangChain to provide accurate and timely answers related to Pakistani law. This AI-driven platform offers legal professionals, students, and the general public an easy way to access legal information, ensuring they stay informed about the latest laws and regulations in Pakistan."
         },
         {
-          title: "title",
-          path: "/thumb1.jpg",
+          title: "Emotion AI",
+          path: "/emotion.png",
           link: "http://example.com",
+          text: "Emotion AI provides actionable insights into business reviews using advanced AI technology. By analyzing customer feedback and reviews, Emotion AI helps businesses understand customer sentiments, identify areas for improvement, and develop strategies to enhance customer satisfaction."
         },
-        {
-          title: "title",
-          path: "/thumb2.jpg",
-          link: "http://example.com",
-        },
-        {
-          title: "title",
-          path: "/thumb3.jpg",
-          link: "http://example.com",
-        },
-      ],
-    },
-  ],
+      ]
+    }
+  ]
 };
 
 const WorkSlider = () => {
@@ -94,25 +75,11 @@ const WorkSlider = () => {
                     aria-hidden
                   />
 
-                  {/* title */}
+                  {/* text */}
                   <div className="absolute bottom-0 translate-y-full group-hover:-translate-y-10 group-hover:xl:-translate-y-20 transition-all duration-300">
-                    <Link
-                      href={image.link}
-                      target="_blank"
-                      rel="noreferrer noopener"
-                      className="flex items-center gap-x-2 text-[13px] tracking-[0.2em]"
-                    >
-                      {/* title part 1 */}
-                      <div className="delay-100">LIVE</div>
-                      {/* title part 2 */}
-                      <div className="translate-y-[500%] group-hover:translate-y-0 transition-all duration-300 delay-150">
-                        PROJECT
-                      </div>
-                      {/* icon */}
-                      <div className="text-xl translate-y-[500%] group-hover:translate-y-0 transition-all duration-300 delay-150">
-                        <BsArrowRight aria-hidden />
-                      </div>
-                    </Link>
+                    <div className="flex items-center gap-x-2 text-[10px] tracking-[0.2em] text-white p-4">
+                      {image.text}
+                    </div>
                   </div>
                 </div>
               </div>

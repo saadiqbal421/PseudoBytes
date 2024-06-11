@@ -23,7 +23,7 @@ const ParticlesContainer = () => {
             value: "",
           },
         },
-        fpsLimit: 140,
+        fpsLimit: 500,
         interactivity: {
           events: {
             onClick: {
@@ -38,7 +38,7 @@ const ParticlesContainer = () => {
           },
           modes: {
             push: {
-              quantity: 10,
+              quantity: 100,
             },
             repulse: {
               distance: 150,
@@ -73,7 +73,7 @@ const ParticlesContainer = () => {
           number: {
             density: {
               enable: true,
-              area: 5000,
+              area: 1000,
             },
             value: 80,
           },

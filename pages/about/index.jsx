@@ -6,14 +6,28 @@ import {
   FaFigma,
   FaHtml5,
   FaJs,
+  FaTs,
   FaReact,
-  FaWordpress,
 } from "react-icons/fa";
 import {
   SiAdobephotoshop,
   SiAdobexd,
   SiFramer,
+  SiTailwindcss,
+  SiLaravel,
   SiNextdotjs,
+  SiTypescript,
+  SiFlask,
+  SiNodedotjs,
+  SiMongodb,
+  SiMysql,
+  SiPrisma,
+  SiNextui,
+  SiPython,
+  SiCypress,
+  SiPlaywright,
+  SiFastapi,
+  SiCucumber,
 } from "react-icons/si";
 
 import Avatar from "../../components/Avatar";
@@ -23,70 +37,46 @@ import { fadeIn } from "../../variants";
 //  data
 export const aboutData = [
   {
-    title: "skills",
+    title: "technologies",
     info: [
       {
-        title: "Web Development",
+        title: "Frontend Development",
         icons: [
           FaHtml5,
-          FaCss3,
+          SiTailwindcss,
           FaJs,
+          SiTypescript,
           FaReact,
-          SiNextdotjs,
-          SiFramer,
-          FaWordpress,
+          SiNextui,
         ],
       },
       {
-        title: "UI/UX Design",
-        icons: [FaFigma, SiAdobexd, SiAdobephotoshop],
-      },
-    ],
-  },
-  {
-    title: "awards",
-    info: [
-      {
-        title: "Webby Awards - Honoree",
-        stage: "2011 - 2012",
-      },
-      {
-        title: "Adobe Design Achievement Awards - Finalist",
-        stage: "2009 - 2010",
-      },
-    ],
-  },
-  {
-    title: "experience",
-    info: [
-      {
-        title: "UX/UI Designer - XYZ Company",
-        stage: "2012 - 2023",
+        title: "Backend Development",
+        icons: [
+          SiNextdotjs,
+          SiNodedotjs,
+          SiLaravel,
+          SiMongodb,
+          SiMysql,
+          SiPrisma,
+        ],
+    
       },
       {
-        title: "Web Developer - ABC Agency",
-        stage: "2010 - 2012",
+        title: "Automation Framework",
+        icons: [
+          SiCypress,
+          SiCucumber,
+          SiPlaywright,
+       ],
       },
       {
-        title: "Intern - DEF Corporation",
-        stage: "2008 - 2010",
-      },
-    ],
-  },
-  {
-    title: "credentials",
-    info: [
-      {
-        title: "Web Development - ABC University, LA, CA",
-        stage: "2011",
-      },
-      {
-        title: "Computer Science Diploma - AV Technical Institute",
-        stage: "2009",
-      },
-      {
-        title: "Certified Graphic Designer - ABC Institute, Los Angeles, CA",
-        stage: "2006",
+        title: "AI Technologies",
+        icons: [
+          SiFlask,
+          SiPython,
+          SiFastapi
+        ],
       },
     ],
   },
@@ -105,7 +95,7 @@ const About = () => {
         initial="hidden"
         animate="show"
         exit="hidden"
-        className="hidden xl:flex absolute bottom-0 -left-[370px]"
+        className="hidden sm:flex absolute bottom-0 -left-[170px]"
       >
         <Avatar />
       </motion.div>
