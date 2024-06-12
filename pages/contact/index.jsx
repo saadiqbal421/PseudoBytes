@@ -1,8 +1,9 @@
 import { motion } from "framer-motion";
 import { BsArrowRight } from "react-icons/bs";
-
 import { fadeIn } from "../../variants";
 import { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';  // Importing the CSS file for React-Toastify
 
 const Contact = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -14,13 +15,33 @@ const Contact = () => {
     const myForm = event.target;
     const formData = new FormData(myForm);
 
-    fetch("/", {
+    fetch("/api/contact/route", {
       method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams(formData).toString(),
+      headers: { "Content-Type": "application/json" },
+       body: JSON.stringify({
+        name: formData.get("name"),
+        email: formData.get("email"),
+        subject: formData.get("subject"),
+        message: formData.get("message"),
+      }),
     })
-      .then(() => alert("Thank you. I will get back to you ASAP."))
-      .catch((error) => console.log(error))
+      .then(() => {
+        console.log("Form submitted successfully.");  
+        toast.success(
+          "Thank you. We will get back to you ASAP.",
+          {
+            style: {
+              background: "linear-gradient(to right, #8A2387, #000000)",
+              color: "white",
+              fontWeight: "bold"
+            }
+          }
+        );
+        myForm.reset();
+      })
+      .catch((error) => {
+        console.error("Error submitting form:", error);
+      })
       .finally(() => setIsLoading(false));
   };
 
@@ -50,6 +71,8 @@ const Contact = () => {
             onSubmit={handleSubmit}
             autoComplete="off"
             autoCapitalize="off"
+            action="/api/sendEmail" // Point to the API route
+            method="POST"
             // only needed for production (in netlify) to accept form input
             data-netlify="true"
           >
@@ -58,6 +81,7 @@ const Contact = () => {
               <input
                 type="text"
                 name="name"
+                id="name"
                 placeholder="Name"
                 className="input"
                 disabled={isLoading}
@@ -68,6 +92,7 @@ const Contact = () => {
               <input
                 type="email"
                 name="email"
+                id="email"
                 placeholder="E-mail"
                 className="input"
                 disabled={isLoading}
@@ -79,6 +104,7 @@ const Contact = () => {
             <input
               type="text"
               name="subject"
+              id="subject"
               placeholder="Subject"
               className="input"
               disabled={isLoading}
@@ -88,6 +114,7 @@ const Contact = () => {
             />
             <textarea
               name="message"
+              id="message"
               placeholder="Message..."
               className="textarea"
               disabled={isLoading}
@@ -113,6 +140,7 @@ const Contact = () => {
           </motion.form>
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 };
