@@ -27,6 +27,7 @@ const Contact = () => {
     })
       .then(() => {
         console.log("Form submitted successfully.");  
+        setIsLoading(false);
         toast.success(
           "Thank you. We will get back to you ASAP.",
           {

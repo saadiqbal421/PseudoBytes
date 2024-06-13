@@ -1,26 +1,23 @@
-import { NextResponse, NextRequest } from 'next/server'
-const nodemailer = require('nodemailer');
 
-// Handles POST requests to /api
+import nodemailer from 'nodemailer';
 
-
-export async function POST(request) {
-
+export default async function POST(request,response) {
     const username = process.env.NEXT_PUBLIC_BURNER_USERNAME;
     const password = process.env.NEXT_PUBLIC_BURNER_PASSWORD;
     const myEmail = process.env.NEXT_PUBLIC_PERSONAL_EMAIL;
 
 
     console.log("dealing with request")
-    const formData = await request.formData()
-    const name = formData.get('name')
-    const email = formData.get('email')
-    const message = formData.get('message')
+    const formData = await request.body;
+    const name = formData.name;
+    const email = formData.email;
+    const subject = formData.subject;
+    const message = formData.message;
 
-    console.log(name,"name");
+    console.log(name,email);
     // create transporter object
     const transporter = nodemailer.createTransport({
-        host: "smtp-mail.outlook.com",
+        host: "smtp.gmail.com",
         port: 587,
         tls: {
             ciphers: "SSLv3",
@@ -36,7 +33,7 @@ export async function POST(request) {
 
     try {
 
-        const mail = await transporter.sendMail({
+        const mail =  transporter.sendMail({
             from: username,
             to: myEmail,
             replyTo: email,
@@ -44,15 +41,16 @@ export async function POST(request) {
             html: `
             <p>Name: ${name} </p>
             <p>Email: ${email} </p>
+            <p>Subject: ${subject} </p>
             <p>Message: ${message} </p>
             `,
         })
 
-        return NextResponse.json({ message: "Success: email was sent" })
+        response.status(200).json({ message: "Success: email was sent" });
 
     } catch (error) {
-        console.log(error)
-        NextResponse.status(500).json({ message: "COULD NOT SEND MESSAGE" })
+        console.log(error);
+        response.status(500).json({ message: "COULD NOT SEND MESSAGE" });
     }
 
 
