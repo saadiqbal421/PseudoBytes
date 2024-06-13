@@ -33,7 +33,8 @@ const Layout = ({ children }) => {
 
       {/* <TopLeftImg /> */}
       <Nav />
-      <Header />
+      <div><Header /></div>
+      
 
       {/* main content */}
       {children}
