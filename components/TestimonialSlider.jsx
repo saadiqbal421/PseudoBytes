@@ -43,9 +43,9 @@ const TestimonialSlider = () => {
     >
       {testimonialData.map((person, i) => (
         <SwiperSlide key={i}>
-          <div className="flex flex-col items-center md:flex-row gap-x-8 h-full px-16">
+          <div className="flex flex-col items-center md:flex-row gap-x-8 h-full px-4 md:px-16">
             {/* avatar, name, position */}
-            <div className="w-full max-w-[300px] flex flex-col xl:justify-center items-center relative mx-auto xl:mx-0">
+            <div className="w-full max-w-[150px] md:max-w-[300px] flex flex-col xl:justify-center items-center relative mx-auto xl:mx-0">
               <div className="flex flex-col justify-center text-center">
                 {/* avatar */}
                 <div className="mb-2 mx-auto">
@@ -58,27 +58,27 @@ const TestimonialSlider = () => {
                 </div>
 
                 {/* name */}
-                <div className="text-lg">{person.name}</div>
+                <div className="text-base md:text-lg">{person.name}</div>
 
                 {/* position */}
-                <div className="text-[12px] uppercase font-extralight tracking-widest">
+                <div className="text-[10px] md:text-[12px] uppercase font-extralight tracking-widest">
                   {person.position}
                 </div>
               </div>
             </div>
 
             {/* quote & message */}
-            <div className="flex-1 flex flex-col justify-center before:w-[1px] xl:before:bg-white/20 xl:before:absolute xl:before:left-0 xl:before:h-[200px] relative xl:pl-20">
+            <div className="flex-1 flex flex-col justify-center before:w-[1px] xl:before:bg-white/20 xl:before:absolute xl:before:left-0 xl:before:h-[200px] relative xl:pl-10 md:pl-20">
               {/* quote icon */}
               <div className="mb-4">
                 <FaQuoteLeft
-                  className="text-4xl xl:text-6xl  mx-auto md:mx-0 text-accent"
-                  aria-aria-hidden
+                  className="text-3xl md:text-4xl xl:text-6xl mx-auto md:mx-0 text-accent"
+                  aria-hidden="true"
                 />
               </div>
 
               {/* message */}
-              <div className="xl:text-lg text-center md:text-left">
+              <div className="text-sm md:text-base xl:text-lg text-center md:text-left">
                 {person.message}
               </div>
             </div>

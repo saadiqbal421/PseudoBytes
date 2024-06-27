@@ -75,8 +75,8 @@ const ServiceSlider = () => {
 
               {/* title & description */}
               <div className="mb-9">
-                <div className="mb-2 text-lg">{item.title}</div>
-                  <p className="max-w-[390px] leading-normal">{truncateDescription(item.description)}</p>
+                <div className="mb-2 text-lg sm:text-xl">{item.title}</div>
+                <p className="max-w-[390px] leading-normal text-sm sm:text-base">{truncateDescription(item.description)}</p>
               </div>
 
               {/* arrow */}
@@ -93,10 +93,10 @@ const ServiceSlider = () => {
 
       {selectedItem && (
         <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-10 flex justify-center items-center z-50">
-          <div className="bg-[rgba(65,57,159,1)] h-max rounded-lg px-19 w-96 h-99 rounded-lg p-12 flex flex-col justify-center items-center">
-            <h2 className="text-4xl mb-4">{selectedItem.title}</h2>
-            <p>{selectedItem.description}</p>
-            <button onClick={() => setSelectedItem(null)}>Close</button>
+          <div className="bg-[rgba(65,57,159,1)] rounded-lg p-4 sm:p-12 w-11/12 sm:w-2/3 lg:w-1/2 xl:w-1/3 flex flex-col justify-center items-center">
+            <h2 className="text-2xl sm:text-4xl mb-4">{selectedItem.title}</h2>
+            <p className="text-sm sm:text-base">{selectedItem.description}</p>
+            <button className="mt-4 text-sm sm:text-base bg-accent text-white py-2 px-4 rounded" onClick={() => setSelectedItem(null)}>Close</button>
           </div>
         </div>
       )}

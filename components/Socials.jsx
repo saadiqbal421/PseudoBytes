@@ -14,13 +14,8 @@ import {
 export const socialData = [
   {
     name: "LinkedIn",
-    link: "https://linkedin.com",
+    link: "https://www.linkedin.com/company/pseudobytes/about/",
     Icon: RiLinkedinFill,
-  },
-  {
-    name: "Github",
-    link: "https://github.com/",
-    Icon: RiGithubLine,
   },
 ];
 
